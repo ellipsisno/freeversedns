@@ -122,14 +122,21 @@ if (isset($_POST['domain']) && !empty($_POST['domain'])) {
     <meta name="description" content="DNS Poetics">
     <meta name="keywords" content="DNS, DNS Lookup, stanza, DNS stanzas, free verse">
     <style>
-      body { margin: 0; }
-      button,input { margin: 0;font-size: 100%;vertical-align: middle; }
-      .form-inline { vertical-align: middle; }
-      table { text-align: center;margin: auto; }
-      td { font-size: 13px; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; color: #fff; }
-      #dns { font-size: 13px; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; }
-      #domain { font-size: 13px; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; }
-      #text { font-size: 13px; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; color: #fff; }
+     body { margin: 0; }
+     button,input { margin: 0; font-size: 100%; vertical-align: middle; }
+     .form-inline { vertical-align: middle; }
+     table { text-align: center; margin: auto; }
+     #dns, #domain { font-size: 21px; font-family: 'DejaVuSansCondensedBook', sans-serif; }
+     td, #text { font-size: 21px; font-family: 'DejaVuSansCondensedBook', sans-serif; color: #fff; }
+     @font-face {
+      font-family: "DejaVuSansCondensedBook";
+			   src: url("fonts/DejaVuSansCondensedBook/DejaVuSansCondensedBook.eot");
+			   src: url("fonts/DejaVuSansCondensedBook/DejaVuSansCondensedBook.eot?#iefix")format("embedded-opentype"),
+			   url("fonts/DejaVuSansCondensedBook/DejaVuSansCondensedBook.woff") format("woff"),
+			   url("fonts/DejaVuSansCondensedBook/DejaVuSansCondensedBook.ttf") format("truetype");
+			   font-style: normal;
+			   font-weight: normal;
+     }
     </style>
   </head>
   <body>
