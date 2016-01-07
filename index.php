@@ -66,9 +66,9 @@ if (isset($_POST['domain']) && !empty($_POST['domain'])) {
         }
     } 
     if (empty($text)) {
-        $composition = "<br />Nothing!";
+        $composition = "<span class='nothing'>Nothing!</span>";
     } else {
-        $newstanza = "<table border='0' width='150' cellpadding='10'><tr><td align='center'>";
+        $newstanza = "<table border='0' width='321' cellpadding='10'><tr><td align='center'>";
         $endstanza = "</td></tr></table>";
         $writingstatus = "0";
         foreach($text as $line) {
@@ -112,42 +112,41 @@ if (isset($_POST['domain']) && !empty($_POST['domain'])) {
             $writingstatus++;
         }
         //$composition = "<br />\n<table>\n<i>by $hyperauthor</i><br /><br />$composition</table>\n";
-        $composition = "<br />\n<table>\n$composition</table>\n";
+		$composition = "\n$composition\n";
     }
 }
 ?>
 <html>
-  <head>
-    <title>Free verse DNS lookup</title>
-    <meta name="description" content="DNS Poetics">
-    <meta name="keywords" content="DNS, DNS Lookup, stanza, DNS stanzas, free verse">
-    <style>
-     body { margin: 0; }
-     button,input { margin: 0; font-size: 100%; vertical-align: middle; }
-     .form-inline { vertical-align: middle; }
-     table { text-align: center; margin: auto; }
-     #dns, #domain { font-size: 21px; font-family: 'DejaVuSansCondensedBook', sans-serif; }
-     td, #text { font-size: 21px; font-family: 'DejaVuSansCondensedBook', sans-serif; color: #fff; }
-     @font-face {
-      font-family: "DejaVuSansCondensedBook";
-			   src: url("fonts/DejaVuSansCondensedBook/DejaVuSansCondensedBook.eot");
-			   src: url("fonts/DejaVuSansCondensedBook/DejaVuSansCondensedBook.eot?#iefix")format("embedded-opentype"),
-			   url("fonts/DejaVuSansCondensedBook/DejaVuSansCondensedBook.woff") format("woff"),
-			   url("fonts/DejaVuSansCondensedBook/DejaVuSansCondensedBook.ttf") format("truetype");
-			   font-style: normal;
-			   font-weight: normal;
-     }
-    </style>
-  </head>
-  <body>
-    <div style="text-align: center">
-      <form method="post">
-      <div class="form-inline">
-        <input id="domain" type="text" name="domain" value="<?=empty($_POST['domain'])?'':$_POST['domain']?>">
-        <button type="submit" id="dns">Free verse DNS Lookup</button>
-      </div>
-      </form>
-      <span id="text"><?=$composition?$composition:'' ?></span>
-    </div>
-  </body>
+    <head>
+        <title>Free verse DNS lookup</title>
+        <meta name="description" content="DNS Poetics">
+        <meta name="keywords" content="DNS, DNS Lookup, stanza, DNS stanzas, free verse">
+        <style>
+            body { margin: 0; }
+            button,input { margin: 0; font-size: 100%; vertical-align: middle; }
+            .form-inline { vertical-align: middle; }
+            #dns, #domain { font-size: 21px; font-family: 'DejaVuSansCondensedBook', sans-serif; }
+            td, .nothing { font-size: 21px; font-family: 'DejaVuSansCondensedBook', sans-serif; color: #fff; }
+            @font-face {
+                font-family: "DejaVuSansCondensedBook";
+                src: url("../fonts/DejaVuSansCondensedBook/DejaVuSansCondensedBook.eot");
+                src: url("../fonts/DejaVuSansCondensedBook/DejaVuSansCondensedBook.eot?#iefix")format("embedded-opentype"),
+                url("../fonts/DejaVuSansCondensedBook/DejaVuSansCondensedBook.woff") format("woff"),
+                url("../fonts/DejaVuSansCondensedBook/DejaVuSansCondensedBook.ttf") format("truetype");
+                font-style: normal;
+                font-weight: normal;
+            }
+        </style>
+    </head>
+    <body>
+        <div align="left">
+            <form method="post">
+                <div class="form-inline">
+                    <input id="domain" type="text" name="domain" value="<?=empty($_POST['domain'])?'':$_POST['domain']?>"><br />
+                    <br /><button type="submit" id="dns">Free verse DNS Lookup</button>
+                </div>
+            </form>
+            <?=$composition?$composition:'' ?>
+        </div>
+    </body>
 </html>
