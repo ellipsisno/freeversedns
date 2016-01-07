@@ -111,8 +111,7 @@ if (isset($_POST['domain']) && !empty($_POST['domain'])) {
             }
             $writingstatus++;
         }
-        //$composition = "<br />\n<table>\n<i>by $hyperauthor</i><br /><br />$composition</table>\n";
-		$composition = "\n$composition\n";
+        $composition = "\n$composition\n";
     }
 }
 ?>
